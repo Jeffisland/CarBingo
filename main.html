@@ -1,0 +1,33 @@
+<head>
+  <title>Assignment</title>
+</head>
+
+<body>
+  <h1>Welcome to "THE ASSIGNMENT!"</h1>
+  {{> theClicker}} <!-- this line calls something named "theClicker" -->
+  {{> theClicker2}}
+</body>
+
+<template name="theClicker"> <!-- this is a button designed & called from above-->
+  <p>The Start time at button press was: {{counter}} </p>
+  <button id="btnStart" onclick="myFunction()" >Start</button>
+  <script>
+    function myFunction() {
+     document.getElementById("btnStart").style.display="none";
+     document.getElementById("btnStop").style.display="block";
+     document.getElementById("paraStop").style.display="none";
+    }
+  </script>
+</template>
+
+<template name="theClicker2">
+  <button id="btnStop" onclick="myFunction2()" >Stop</button>
+  <script>
+    function myFunction2() {
+     document.getElementById("btnStop").style.display="none";
+     document.getElementById("btnStart").style.display="block";
+     document.getElementById("paraStop").style.display="block";
+    }
+  </script>
+  <p id="paraStop">The Stop time at button press was: {{counter}} </p>
+</template>
